@@ -13,7 +13,7 @@ git submodule update
 
 pushd libsodium
 
-git fetch && git checkout stable
-git reset --hard origin/stable
+git fetch && git checkout sodium-aion-vrf
+git reset --hard origin/sodium-aion-vrf
 git pull
 popd

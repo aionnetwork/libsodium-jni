@@ -1,0 +1,13 @@
+Note: require JAVA_HOME setup before building the native lib. 
+
+1. This libsodium project is to genaration the native sodium lib and the jni lib.
+
+2. The build script currently tested on ubuntu 16.04. And the build script requires the gradle version 5.1.1 or later.
+
+3. Execute ./dependencies.sh for installing dependencies of the running environment.
+
+3. Execute ./build-linux.sh to build the native lib.
+
+4. Copy libsodium.so from <libsodium-jni project root>/libsodium/libsodium-host/lib to <aion project root>/native/linux/sodium
+
+5. Copy libsodiumjni.so from <libsodium-jni project root>/build/libs/sodiumjni/shared to <aion project root>/native/linux/sodium 
