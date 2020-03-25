@@ -72,4 +72,20 @@ public class VRFTest {
 
         assertEquals(0, Sodium.crypto_vrf_verify(hash, pk, proof, msg, msg.length));
     }
+
+    @Test
+    public void testCrypto_vrf_prove_with_ed25519Key() {
+        byte[] sk = new byte[Sodium.crypto_sign_ed25519_secretkeybytes()];
+        byte[] pk = new byte[Sodium.crypto_sign_ed25519_publickeybytes()];
+        Sodium.crypto_sign_ed25519_keypair(pk, sk);
+
+        byte[] proof = new byte[Sodium.crypto_vrf_proofbytes()];
+
+        byte[] msg = "testVrf".getBytes();
+        Sodium.crypto_vrf_prove(proof, sk, msg, msg.length);
+        byte[] hash = new byte[Sodium.crypto_vrf_outputbytes()];
+        Sodium.crypto_vrf_proof_to_hash(hash, proof);
+
+        assertEquals(0, Sodium.crypto_vrf_verify(hash, pk, proof, msg, msg.length));
+    }
 }
