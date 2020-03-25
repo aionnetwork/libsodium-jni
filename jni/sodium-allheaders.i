@@ -141,6 +141,8 @@
 %include "sodium/crypto_verify_16.h"
 %include "sodium/crypto_verify_32.h"
 %include "sodium/crypto_verify_64.h"
+%include "sodium/crypto_vrf.h"
+%include "sodium/crypto_vrf_ietfdraft03.h"
 %include "sodium/export.h"
 %include "sodium/private"
 %include "sodium/randombytes.h"
